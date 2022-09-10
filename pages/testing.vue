@@ -10,6 +10,10 @@ function validate(value) {
   return !!value ? !!value : "This needs to be ticked";
 }
 
+function validatename(value) {
+  return value.length !== 0 ? true : "Name required";
+}
+
 function invalid() {
   alert(
     "To submit the form all fields must be clicked. Please look at all the Fields to ensure its all ticked"
@@ -24,6 +28,22 @@ function invalid() {
       @invalid-submit="invalid"
       class="space-y-8 divide-y divide-gray-200"
     >
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Your name</label>
+        <div class="mt-1">
+          <Field
+            :rules="validatename"
+            name="name"
+            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+          />
+
+          <ErrorMessage
+            class="block mt-xs text-red-700 font-medium"
+            name="name"
+          >
+          </ErrorMessage>
+        </div>
+      </div>
       <div v-for="question in questions">
         <div v-for="subquestion in question">
           <fieldset>
