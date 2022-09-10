@@ -1,15 +1,29 @@
 <script setup>
-import { Form, Field } from "vee-validate";
+import { Form, Field, ErrorMessage } from "vee-validate";
 import questions from "@/data/checklist";
 
 function logvalues(values) {
   console.log(values);
 }
+
+function validate(value) {
+  return !!value ? !!value : "This needs to be ticked";
+}
+
+function invalid() {
+  alert(
+    "To submit the form all fields must be clicked. Please look at all the Fields to ensure its all ticked"
+  );
+}
 </script>
 
 <template>
   <view-wrapper title="Checklist">
-    <Form @submit="logvalues" class="space-y-8 divide-y divide-gray-200">
+    <Form
+      @submit="logvalues"
+      @invalid-submit="invalid"
+      class="space-y-8 divide-y divide-gray-200"
+    >
       <div v-for="question in questions">
         <div v-for="subquestion in question">
           <fieldset>
@@ -23,19 +37,22 @@ function logvalues(values) {
               <div class="relative flex items-start">
                 <div class="flex items-center h-5">
                   <Field
-                    id="comments"
                     :value="true"
+                    :rules="validate"
                     :name="`${subquestion.header}-${index}`"
                     type="checkbox"
                     class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
                   />
                 </div>
                 <div class="ml-3 text-sm">
-                  <label for="comments" class="font-medium text-gray-700">{{
-                    data
-                  }}</label>
+                  <label class="font-medium text-gray-700">{{ data }}</label>
                 </div>
               </div>
+              <ErrorMessage
+                class="block mt-xs text-red-700 font-medium"
+                :name="`${subquestion.header}-${index}`"
+              >
+              </ErrorMessage>
             </div>
           </fieldset>
         </div>
