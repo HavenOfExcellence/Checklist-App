@@ -13,6 +13,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.0",
     "@heroicons/vue": "^2.0.10",
+    "@notionhq/client": "^2.2.0",
     "vee-validate": "^4.6.7"
   }
 }

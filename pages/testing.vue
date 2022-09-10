@@ -4,6 +4,11 @@ import questions from "@/data/checklist";
 
 function logvalues(values) {
   console.log(values);
+  useFetch("/api/notion", {
+    params: {
+      name: values.name,
+    },
+  });
 }
 
 function validate(value) {
