@@ -1,5 +1,7 @@
 <script setup>
-const notion = useNotion();
+function nav() {
+  navigateTo("/records");
+}
 </script>
 
-<template>asdas</template>
+<template><button @click="nav">asdasdasdasd</button></template>

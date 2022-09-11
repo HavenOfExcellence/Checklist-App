@@ -11,7 +11,7 @@ async function logvalues(values) {
   });
   console.log(data.value);
   if (data.value) {
-    navigateTo("/records");
+    return navigateTo("/records");
   } else {
     alert("Uh oh, something went wrong.");
   }
