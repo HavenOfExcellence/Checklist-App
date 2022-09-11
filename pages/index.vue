@@ -27,7 +27,7 @@ function invalid() {
 </script>
 
 <template>
-  <view-wrapper title="Dashboard">
+  <view-wrapper title="New Record">
     <Form
       @submit="logvalues"
       @invalid-submit="invalid"
