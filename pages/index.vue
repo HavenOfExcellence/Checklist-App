@@ -2,13 +2,19 @@
 import { Form, Field, ErrorMessage } from "vee-validate";
 import questions from "@/data/checklist";
 
-function logvalues(values) {
+async function logvalues(values) {
   console.log(values);
-  useFetch("/api/notion", {
+  const { data } = await useFetch("/api/notion", {
     params: {
       name: values.name,
     },
   });
+  console.log(data.value);
+  if (data.value) {
+    navigateTo("/records");
+  } else {
+    alert("Uh oh, something went wrong.");
+  }
 }
 
 function validate(value) {
