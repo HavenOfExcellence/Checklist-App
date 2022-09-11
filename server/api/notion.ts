@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
     },
     properties: {
       Approved: { id: "GmiR", type: "checkbox", checkbox: true },
-      Name: {
+      "Approving Officer": {
         id: "title",
         type: "title",
         title: [
