@@ -702,4 +702,4 @@ const questions: Question[] = [
   ],
 ];
 
-export default questions;
+export { questions, questions2 };

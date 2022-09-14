@@ -5,11 +5,18 @@ const token = "secret_173p2ob5lmUyLC6niRXG8v19P0as09WlK4tGhdjHwFR";
 const id = "dbff06adb123450f83e1f0d65fb2a2a7";
 
 export default defineEventHandler(async (event) => {
-  const { name } = useQuery(event);
+  const { name, checklist } = useQuery(event);
 
   const notion = new Client({
     auth: token,
   });
+
+  const response = await notion.request({
+    path: `databases/${id}/query`,
+    method: "post",
+  });
+
+  console.log(response.results[0].properties);
 
   try {
     const page = await notion.pages.create({
@@ -19,6 +26,25 @@ export default defineEventHandler(async (event) => {
       },
       properties: {
         Approved: { id: "GmiR", type: "checkbox", checkbox: true },
+        "Checklist Number": {
+          id: "%3BZvx",
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: { content: checklist, link: null },
+              annotations: {
+                bold: false,
+                italic: false,
+                strikethrough: false,
+                underline: false,
+                code: false,
+                color: "default",
+              },
+              href: null,
+            },
+          ],
+        },
         "Approving Officer": {
           id: "title",
           type: "title",

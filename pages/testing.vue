@@ -1,6 +1,6 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
-import questions from "@/data/checklist";
+import { questions } from "@/data/checklist";
 
 function logvalues(values) {
   console.log(values);

@@ -1,13 +1,13 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
-import { questions } from "@/data/checklist";
+import { questions2 } from "@/data/checklist";
 
 async function logvalues(values) {
   console.log(values);
   const { data } = await useFetch("/api/notion", {
     params: {
       name: values.name,
-      checklist: "1",
+      checklist: "2",
     },
   });
   console.log(data.value);
@@ -58,7 +58,7 @@ function invalid() {
           </ErrorMessage>
         </div>
       </div>
-      <div v-for="question in questions">
+      <div v-for="question in questions2">
         <div v-for="subquestion in question">
           <fieldset>
             <legend class="text-base font-medium text-gray-900">
