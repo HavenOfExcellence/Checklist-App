@@ -4,6 +4,462 @@ type content = {
   header: string;
   data: string[];
 };
+const questions2: Question[] = [
+  [
+    {
+      header: "Preparation and Documentation",
+      data: [
+        "Was there a safety corner set up and potential educational poster to warn servicemen?",
+        "Is there hazard reporting box and containing adequate forms for servicemen to report hazards?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Fire Safety",
+      data: [
+        "Was a cope of Fire Standing Orders available/display in the Fire Fighting equipment location?",
+        'Was there a "SMoking Designated Place" allocated and cleared marks out the common area',
+        "Is there serviceable/sufficient Fire Fighting equipment at the common area?",
+        "Is rubbish, rags, and paper waste ect., accumulated in the electrical riser, COmms Riser Room ect., to cause spontaneous combustion in case fire?",
+        "Are there any flammable materials kept in the common area?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Equipment and Electrical Appliances",
+      data: [
+        "Are the water cooler/hot water dispenser being check/ clean regularly?",
+        "Are the fans/lights being switched off when not in use, especially in drying areas?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Personnel Safety and Hygiene",
+      data: [
+        "Is the toilet clean and maintained for hygienic, ventilation fan installed, washing and cleaning materials stored in the proper areas?",
+        "Is the toilet/ corridor/ common area sufficiently lighting and ventilation?",
+        "Are there any trip and fall hazard/ceiling falling hazard?",
+        "Are the noise levels within the acceptable limit?( As a rule, if one has to shout to be heard, noise is above acceptable limits and hearing defenders should be used)",
+      ],
+    },
+  ],
+
+  [
+    {
+      header: "Preperation and Documentation",
+      data: [
+        "Was RMP-RAWR developed for the officer",
+        "Was the Standing Order and Safety/Operating Instruction available/displayed for the office?",
+        "Did the appropriate authority endorse the RMP-RAWR, Standing Order/ Safety and Operating Instruction?",
+        "Were all personnel being brief regularly on the safety aspect of office safety?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Medical Safety",
+      data: [
+        "Was there a First Aid Box with necessary items(15items)?",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Is there any expired medication content in the First Aid Box?",
+        "Was First Aid Box items regularly check and short fall items replace?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Fire Safety",
+      data: [
+        "Was Fire Standing Orders displayed",
+        "Is the fire evacuation route free from obstruction and evacuation route available and displayed in the office?",
+        "Did the servicemen attend any Fire drills conducted by the unit?",
+        "Are there any flammable materials kept in the office?",
+        "Is rubbish, rags, and paper waste etc. accumulated in the office to cause spontaneous combustion in case of fire?",
+        "Was there overloading of power point, unauthorised alteration to electrical fitting and exposed wiring?",
+        "was all electrical appliance and power point switched off before leaving the office?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Equipment and Electrical Appliances",
+      data: [
+        "Is there any unauthorised electrical appliance brought into the office with the approval?",
+        "Was there any items display on top of the cupboard to may cause fall hazard",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Personnel Safety and Hygiene",
+      data: [
+        "Is the office properly organised, neat and tidy for hygienic condition?",
+        "Is the office sufficient;y lighting and ventilated?",
+        "Are there any trip and fall hazard ceiling falling hazard?",
+        "Are the noise levels within the acceptable limit? (As a rule, if one has to shout to be heard, noise is above limits and hearing defendes should be used)",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Preperation and Documentation",
+      data: [
+        "Are there a relevant Standing order and Safety/ Operating Instructions for MHE,LSD",
+        "Was the Standing Order and Safety/ Operating Instruction available displayed?",
+        "Did the appropriate authority endorse the RMP-RAWR, Standing Order/ Safety and Operating Instruction?",
+        "Was the RMP-RAWR developed?",
+        "Is there any displayed of education poster to warn servicemen of potential hazards?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Medical Safety",
+      data: [
+        "Was there a First Aid Box with neccessary items (15 Items)",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Is there any expired medication content in the First Aid Box?",
+        "Was First Aid Box items regularly check and short fall items replace?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Fire Safety",
+      data: [
+        "Was Fire Standing Orders Displayed?",
+        "Was firefighting equipment available/serviceable next to the store house?",
+        "Did the servicemen attend any Fire drills conducted?",
+        "Is the fire evacuation route free from obstruction and evacuation route available displayed in the store house?",
+        "Is rubbish, rags, and paper waste ect., accumulated in the storeroom to cause spontaneous combustion in case of fire?",
+        "Are there any flammable materials kept in the store house?",
+        "Was there overloading of MISSING",
+        "Was all electrical appliance and power point switched off before leaving the sotre house?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Equipment and Electrical Appliances",
+      data: [
+        "Did the store-man being brief regularly on the safety aspect of his/her role and responsibility in handling serviceable/unserviceable equipment?",
+        "Is there anyheavy equipment/item stack above chest level?",
+        "Are shelves/racks constructed in serviceable working conditions and secured from falling?",
+        "Is there any Personal Protective Equipment(PPE) when required to use?",
+        "Did the store-man seperate the unserviceable/condemned/damagestores/items?",
+        "Are the Equipment required servicing/maintenance i.e. life jackets, rappelling /safety ropes, lifting and others checked regularly before issuing out?",
+        "Is there any unauthorised electrical appliance brought into the store house without the commander approval?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Personnel Safety and Hygiene",
+      data: [
+        "Is there store house properly organised, neat and tidy for hygienic condition?",
+        "Is the store house sufficiently lighting and ventilated?",
+        "Are there any trip and fall hazard/ceiling falling hazard?",
+        "Are the noise levels with the acceptable limit?(As a rule, if one has to shout to be heard, noise is above acceptable limits and hearing defenders should be used",
+        "Did the store man knows in adopting the correct posture in carring/lifting heavy objects and aware of such practices?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Preparation and Documentation",
+      data: [
+        "Was RMP-RAWR/Safety Instruction being developed for the accomodation?",
+        "Was Standing Orders/Safety and Operating Instruction displayed for accomodation?",
+        "Did the appropriate authority endorse the RMP-RAWR/Standing order?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Fire Safety",
+      data: [
+        "Was Fire Standing Orders and evacuation route displayed?",
+        "Was there any obstruction to the fire evacuation route?",
+        "Did the servicemen attend Fire drills conducted by the unit?",
+        "Are there flammable materials kept in the accommodation?",
+        "Was there overloading of power point, unauthorised alteration to electrical fitting and exposed wiring?",
+        "Was all electrical appliance and power point switched off before leaving the accommodation?",
+      ],
+    },
+    {
+      header: "Equipment And Electrical Appliances",
+      data: [
+        "Was there any unauthorised electrical appliance being brought into the accommodation area without approveal by commander",
+        "Was cleaning materials organised and neatly arrange in a proper area?",
+        "Was the accommodation area sufficienly lighted and ventilated",
+        "Is there any trip and falling hazard in the accommodation area",
+      ],
+    },
+    {
+      header: "Personal Safety and Hygiene",
+      data: [
+        "Was the accommodation area organised, neat and tidy in hygienic condition?",
+        "Was cleaning materials organised and neatly arrage in a proper area>",
+        "Was the accommodation area sufficiently lighted and ventilated?",
+        "Is there any trip and fall hazard in the accommodation area?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Qualification and Documentation",
+      data: [
+        "Did the armskoteman attended the relevant courses before handling the job task given to?",
+        "Are there a relevant Standing Order and Safety/Operating Instructions?",
+        "Was the Standing order and Safety/ Operating Instruction available/ displayed?",
+        "Did the appropriate authority endorse the Standing Order/Safety and Operating Instruction?",
+        "Was RMP-RAWR developed?",
+        "Is there any displaed of education to warn servicemen of potential hazards?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Medical Safety",
+      data: [
+        "Was there a First Aid Box with necessary items(15items)?",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Is there any expired medication content in the First Aid Box?",
+        "Was First Aid Box items regularly check and short fall items replace?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Fire Safety",
+      data: [
+        "Was Fire Standing Orders displayed",
+        "Was firefighting equipment available/serviceable?",
+        "Did the armskoteman attend any Fire drills conducted by the unit?",
+        "Is the fire evacuation route free from obstruction and evacuation route available and displayed in the office?",
+        "Is there any accumulated rubbish to cause spontaneous combustion in case of fire?",
+        "Was there overloading of power point, unauthorised alteration to electrical fitting and exposed wiring?",
+        "was all electrical appliance and power point switched off before leaving the armskote",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Weapon and Equipment",
+      data: [
+        "Did the armskote being brief regularly in the safety aspect on the roles and responsibility in handling serviceable/unserviceable weapons, as well as issueing and receiving of weapons?",
+        "Was there a procedure to check weapons returning to the armskote by the sevicemen are free from Blanks and Live ammuniations?",
+        "Are there seperate racks to place unserviceable weapons and clearly mark, tagged and chain to prevent being issued?",
+        "For weapons preserved in boxes, is the stacking of boxes above the soldiers regular height",
+        "Ask shelves/racks constructed in serviceable working conditions and secured from falling?",
+        "Is there any Person Protective Equipment(PPE) available when required to use?",
+        "Is there any designate clearning area?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Personnel Safety and Hygiene",
+      data: [
+        "Is the armskote/armoury properly organised, Dry, neat and tidy?",
+        "Are all personnel working in the armskote in proper working attire",
+        "Is the armskote sufficiently lighted and ventilated?",
+        "Did the armskote knows in adopting the correct posture in carrying lifing heavy objects and aware of such practices?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Perparation and Documentation",
+      data: [
+        "Was RMP-RAWR developed for MSVS/Hanger?",
+        "Was Standing Orders / Safety and Operating Instruction displayed?",
+        "Did the appropriate authority enforse the RMP-RAWR, Standing Order/afety and Operating Instruction?",
+        "Were all personnel being brief regularly on the safety aspect in operating the equipment?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Medical Safety",
+      data: [
+        "Was there a First Aid Box with necessary items(15items)?",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Is there any expired medication content in the First Aid Box?",
+        "Was First Aid Box items regularly check and short fall items replace?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Fire Safety",
+      data: [
+        "Was Fire Standing Orders displayed",
+        "Was there any obstruction to the fire evacuation route?",
+        "Did the servicemen attend any Fire drills conducted by the unit?",
+        "Are there any flammable materials kept in the MSVS/Hanger",
+        "Is there any accumulated rubbish to cause spontaneous combustion in case of fire",
+        "Was there overloading of power point, unauthorised alteration to electrical fitting and exposed wiring?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Equipment and Electrical Appliances",
+      data: [
+        "Is there any unauthorised electrical appliance brought into the MSVS/Hanger without the commander approval?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Peronnel Safety and Hygiene",
+      data: [
+        "Is the MSVS/ Hanger properly organised, dry, neat, and tidy?",
+        "Is the armskote sufficiently lighted and ventilated?",
+        "Are there any trip hazard and ceiling falling hazard?",
+        "Are the noise levels within the acceptable limit?(As a rule, if one has to shout to be heard, noise is above limits and hearing defendes should be used)",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Preparation and Documentation",
+      data: [
+        "Was the RMP-RAWR developed for the Workshop?",
+        "Was Standing Orders/ Safety and Operating Instruction displayed?",
+        "Did the appropriate authority enfoirse the RMP-RAWR, Standing Order/ Safety and Operating Instruction?",
+        "Were all personnel being brief regularly on the safety aspect in operating the equipment?",
+        "Is there any displayed of education poster to warn servicement of potential hazards?",
+      ],
+    },
+  ],
+
+  [
+    {
+      header: "Medical Safety",
+      data: [
+        "Was there a First Aid Box with necessary items(15items)?",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Is there any expired medication content in the First Aid Box?",
+        "Was First Aid Box items regularly check and short fall items replace?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Fire Safety",
+      data: [
+        "Was Fire Standing Orders and evacuation routedisplayed",
+        "Was there any obstruction to the fire evacuation route?",
+        "Did the servicemen attend any Fire drills conducted by the unit?",
+        "Are there any flammable materials kept in the workshop?",
+        "Is there any accumulated rubbish to cause spontaneous combustion in case of fire?",
+        "Was there overloading of power point, unauthorised alteration to electrical fitting and exposed wiring?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Vehicle Park",
+      data: [
+        "Did the Transport Leader being brief regularly on the aspect on the roles and responsibility in handling serviceable/ unserviceable vehicle, as well as issuing and receiving of vehicle?",
+        "Was there a procedure to check vehicle returning to the Workshop?",
+        "Are the parking lots clearly marked, numbered to prevent vehicles from colliding?",
+        "For vehicles parked, is the spacing between vehicles comfortable for the soldier to gain excess to the vehicle?",
+        "Was the tail board of the vehicle secured and locked?",
+        "Was there Wheel choke use when Vehicle is parked stationary on the front right wheel",
+        "Are shelves/ racks constructed in workshop serviceable working conditions and secured from falling?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Personnel Safety and Hygiene",
+      data: [
+        "Is the Workshop properly organised, neat and tidy for hygienic condition?",
+        "MISSING",
+        "MISSING",
+        "MISSING",
+        "Is the fire evacuation route free form obstruction and evacuation route available and displayed in the POL store?",
+        "Is rubbish, rags, and paper waste ect., accumulated in the POL store to cause spontaneous combustion in case of fire?",
+        "Are there any flammable materials kept in the POL store?",
+        "Was there overloading of power point, unauthorised alteration to electrical fitting and exposed wiring?",
+        "Was all electrical appliance and power point switched off before leaving the store house?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Equipment and Electrical Appliances",
+      data: [
+        "Did the POL store-man being brief regularly on the safety aspect of his/her role and responsibility in handling serviceable/unserviceable equipment?",
+        "Is the Workshop sufficiently lighted and ventilated?",
+        "Are they any trip hazard and ceiling falling hazard?",
+        "Are the noise levels within the acceptable limit?( As a rule, if one has to shout to be heard, noise is above acceptable limits and hearing defenders should be used)",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Preperation and Documentation",
+      data: [
+        "Was the Standing Orders and Safety Instruction available and displayed",
+        "Did the appropriate authority endorse the RMP-RAWR, Standing Order/ Safety and Operating Instruction?",
+        "Was RMP-RAWR developed?",
+        "Is there any displayed of education poster to warn servicemen of potential hazards?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Medical Safety",
+      data: [
+        "Was there a First Aid Box with necessary items(15items)?",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Did the servicemen attend any Fire drills conducted?",
+        "Is the fire evacuation route free from obstruction and evacuation route available and displayed in the office?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "MISSING C",
+      data: [
+        "Was there a First Aid Box with necessary items(15items)?",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Did the servicemen attend any Fire drills conducted?",
+        "Is the fire evacuation route free from obstruction and evacuation route available and displayed in the office?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "MISSING D",
+      data: [
+        "Was there a First Aid Box with necessary items(15items)?",
+        "Is there a check-list displayed for all the items in the First Aid Box?",
+        "Did the servicemen attend any Fire drills conducted?",
+        "Is the fire evacuation route free from obstruction and evacuation route available and displayed in the office?",
+      ],
+    },
+  ],
+  [
+    {
+      header: "Personnel Safety and Hygiene",
+      data: [
+        "Is the POL store properly organised, neat tidy for hygienic conditions?",
+        "Is the POL store sufficintly lighting and ventilated?",
+        "Are there any trip and fall hazard/ceiling falling hazard?",
+        "Are the noise levels within the acceptable limit?( As a rule, if one has to shout to be heard, noise is above acceptable limits and hearing defenders should be used)",
+        "Did the POL store knows in adopting the orrec posture in carrying/ lifting heavy objects and aware of such practices?",
+      ],
+    },
+  ],
+];
 
 const questions: Question[] = [
   [
