@@ -1,7 +1,10 @@
 <script setup>
-function nav() {
-  navigateTo("/records");
-}
+const { data: asdasd } = await useFetch("/api/sheets", {
+  params: {
+    name: "LTA Imran",
+    checklist: "2",
+  },
+});
 </script>
 
-<template><button @click="nav">asdasdasdasd</button></template>
+<template>{{ asdasd }}</template>

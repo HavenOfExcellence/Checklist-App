@@ -4,7 +4,7 @@ import { questions2 } from "@/data/checklist";
 
 async function logvalues(values) {
   console.log(values);
-  const { data } = await useFetch("/api/notion", {
+  const { data } = await useFetch("/api/sheets", {
     params: {
       name: values.name,
       checklist: "2",
