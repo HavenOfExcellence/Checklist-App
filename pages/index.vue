@@ -62,7 +62,7 @@ function invalid() {
 </script>
 
 <template>
-  <view-wrapper title="New Record">
+  <view-wrapper title="ECO">
     <Form
       @submit="logvalues"
       @invalid-submit="invalid"

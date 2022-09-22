@@ -2,8 +2,8 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 
 const navigation = reactive([
-  { name: "New Record", href: "/", current: false },
-  { name: "New Record2", href: "/checklist", current: false },
+  { name: "ECO Checklist", href: "/", current: false },
+  { name: "UOHO Checklist", href: "/checklist", current: false },
   { name: "Records", href: "/records", current: false },
 ]);
 
