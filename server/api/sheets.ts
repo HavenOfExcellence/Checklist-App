@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
   console.log({ name, checklist });
 
   const auth = new google.auth.GoogleAuth({
-    keyFile: "./server/api/secret.json",
+    keyFile: "./public/secret.json",
     scopes: "https://www.googleapis.com/auth/spreadsheets",
   });
 
