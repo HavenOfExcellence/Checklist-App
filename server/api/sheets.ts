@@ -6,7 +6,7 @@ const mapping = {
 };
 
 export default defineEventHandler(async (event) => {
-  const { name, checklist } = useQuery(event);
+  const { name, checklist, remarks } = useQuery(event);
 
   const date = new Date();
   const datestring = `${date.getDate()}/${
@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
     range: `${mapping[checklist.toString()]}!A2:Z10000`,
     valueInputOption: "USER_ENTERED",
     requestBody: {
-      values: [[name, datestring, "Approved", "NIL"]],
+      values: [[name, datestring, "Approved", remarks]],
     },
   });
 

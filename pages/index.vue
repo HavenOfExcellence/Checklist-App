@@ -2,12 +2,34 @@
 import { Form, Field, ErrorMessage } from "vee-validate";
 import { questions } from "@/data/checklist";
 
+function getRemarks(stuff) {
+  let remarks = "";
+  for (const [key, value] of Object.entries(stuff)) {
+    console.log({ key, value });
+
+    if (key == "name") {
+      continue;
+    }
+
+    if (value == "true" || value == "false") {
+      continue;
+    }
+
+    console.log({ key, value });
+    remarks += `${key} : ${value}`;
+  }
+
+  return remarks;
+}
+
 async function logvalues(values) {
-  console.log(values);
+  const remarks = getRemarks(values);
+
   const { data } = await useFetch("/api/sheets", {
     params: {
       name: values.name,
       checklist: "1",
+      remarks,
     },
   });
   console.log(data.value);
@@ -18,12 +40,18 @@ async function logvalues(values) {
   }
 }
 
+function isBool(value) {
+  console.log(value);
+  console.log(typeof value.value == "boolean");
+  return typeof value.value == "boolean";
+}
+
 function validate(value) {
-  return !!value ? !!value : "This needs to be ticked";
+  return value == undefined ? "This needs to be ticked" : true;
 }
 
 function validatename(value) {
-  return value.length !== 0 ? true : "Name required";
+  return value == undefined ? "Name Required" : true;
 }
 
 function invalid() {
@@ -69,24 +97,73 @@ function invalid() {
               class="mt-4 space-y-4"
             >
               <div class="relative flex items-start">
-                <div class="flex items-center h-5">
-                  <Field
+                <div class="flex flex-col">
+                  <!-- <Field
                     :value="true"
                     :rules="validate"
                     :name="`${subquestion.header}-${index}`"
                     type="checkbox"
                     class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                  />
-                </div>
-                <div class="ml-3 text-sm">
-                  <label class="font-medium text-gray-700">{{ data }}</label>
+                    /> -->
+
+                  <div class="text-sm">
+                    <label class="font-medium text-gray-700">{{ data }}</label>
+                  </div>
+                  <Field
+                    v-slot="{ field }"
+                    :name="`${subquestion.header}-${index}`"
+                    :rules="validate"
+                  >
+                    <div class="flex flex-row gap-x-4">
+                      <div>
+                        <input
+                          v-bind="field"
+                          class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                          :name="`${subquestion.header}-${index}`"
+                          type="radio"
+                          value="true"
+                        />
+                        Yes
+                      </div>
+                      <div>
+                        <input
+                          v-bind="field"
+                          class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                          :name="`${subquestion.header}-${index}`"
+                          type="radio"
+                          value="false"
+                        />
+                        No
+                      </div>
+                      <label for="email" class="sr-only">Remarks</label>
+                      <!-- <div v-if="isBool(field)">
+                        asd
+                        <input
+                          :disabled="true"
+                          type="text"
+                          :name="`${subquestion.header}-${index}`"
+                          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+                          placeholder="Remarks"
+                        />
+                      </div> -->
+                      <div>
+                        <input
+                          :disabled="false"
+                          v-bind="field"
+                          type="text"
+                          :name="`${subquestion.header}-${index}`"
+                          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+                          placeholder="Remarks"
+                        />
+                      </div>
+                    </div>
+                    <ErrorMessage
+                      :name="`${subquestion.header}-${index}`"
+                      class="block mt-xs text-red-700 font-medium"
+                    />
+                  </Field>
                 </div>
               </div>
-              <ErrorMessage
-                class="block mt-xs text-red-700 font-medium"
-                :name="`${subquestion.header}-${index}`"
-              >
-              </ErrorMessage>
             </div>
           </fieldset>
         </div>
