@@ -8,7 +8,7 @@
         target="_"
       >
         <h2 class="text-sm text-blue-700 underline mb-6">
-          Click to see Sheet in a new Tap
+          Click to see Sheet in a new Tab
         </h2>
       </a>
       <iframe
