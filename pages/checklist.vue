@@ -25,11 +25,14 @@ function getRemarks(stuff) {
 async function logvalues(values) {
   const remarks = getRemarks(values);
 
+  const { node } = values;
+
   const { data } = await useFetch("/api/sheets", {
     params: {
       name: values.name,
       checklist: "2",
       remarks,
+      node,
     },
   });
   console.log(data.value);
@@ -78,6 +81,22 @@ function invalid() {
             name="name"
             class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
+
+          <ErrorMessage
+            class="block mt-xs text-red-700 font-medium"
+            name="name"
+          >
+          </ErrorMessage>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Node</label>
+        <div class="mt-1">
+          <Field as="select" id="node" name="node">
+            <option value="STC">STC</option>
+            <option value="ATC">ATC</option>
+            <option value="LVC">LVC</option>
+          </Field>
 
           <ErrorMessage
             class="block mt-xs text-red-700 font-medium"
