@@ -5,9 +5,13 @@ import { questions2 } from "@/data/checklist";
 function getRemarks(stuff) {
   let remarks = "";
   for (const [key, value] of Object.entries(stuff)) {
-    console.log({ key, value });
+    // console.log({ key, value });
 
     if (key == "name") {
+      continue;
+    }
+
+    if (key == "node") {
       continue;
     }
 
@@ -15,10 +19,29 @@ function getRemarks(stuff) {
       continue;
     }
 
-    console.log({ key, value });
-    remarks += `${key} : ${value}`;
+    const split = key.split("-");
+    // console.log({ key, value, split });
+
+    const question = split[0];
+    const index = split[1];
+
+    var ans = "";
+
+    const correctques = questions.forEach((ques) => {
+      ques.forEach((innerques) => {
+        console.log(innerques);
+        console.log(innerques.header);
+        console.log(question);
+        if (innerques.header == question) {
+          ans += innerques.data[index];
+        }
+      });
+    });
+
+    remarks += `${question}-${ans}-${value}`;
   }
 
+  console.log(remarks);
   return remarks;
 }
 

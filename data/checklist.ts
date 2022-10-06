@@ -136,7 +136,7 @@ const questions2: Question[] = [
         "Is the fire evacuation route free from obstruction and evacuation route available displayed in the store house?",
         "Is rubbish, rags, and paper waste ect., accumulated in the storeroom to cause spontaneous combustion in case of fire?",
         "Are there any flammable materials kept in the store house?",
-        "Was there overloading of MISSING",
+        "Was there overloading of Electrical Appliances?",
         "Was all electrical appliance and power point switched off before leaving the sotre house?",
       ],
     },
@@ -381,9 +381,6 @@ const questions2: Question[] = [
       header: "Personnel Safety and Hygiene",
       data: [
         "Is the Workshop properly organised, neat and tidy for hygienic condition?",
-        "MISSING",
-        "MISSING",
-        "MISSING",
         "Is the fire evacuation route free form obstruction and evacuation route available and displayed in the POL store?",
         "Is rubbish, rags, and paper waste ect., accumulated in the POL store to cause spontaneous combustion in case of fire?",
         "Are there any flammable materials kept in the POL store?",
@@ -427,23 +424,22 @@ const questions2: Question[] = [
   ],
   [
     {
-      header: "MISSING C",
+      header: "Fire-Safety",
       data: [
-        "Was there a First Aid Box with necessary items(15items)?",
-        "Is there a check-list displayed for all the items in the First Aid Box?",
-        "Did the servicemen attend any Fire drills conducted?",
-        "Is the fire evacuation route free from obstruction and evacuation route available and displayed in the office?",
+        "Did the servicemen attend any Fire drills conducted by the unit?",
+        "Are there any flammable materials kept in the office?",
+        "Is rubbish, rags and paper waste ect., accumulated in the office to cause spontaneous combustion in case of fire",
+        "Was there overloading of power point, unauthorised alteration to electrical fitting and exposed wiring?",
+        "Was all electrical appliance and power point switched off before leaving the office?",
       ],
     },
   ],
   [
     {
-      header: "MISSING D",
+      header: "Equipment and Electrical Appliances",
       data: [
-        "Was there a First Aid Box with necessary items(15items)?",
-        "Is there a check-list displayed for all the items in the First Aid Box?",
-        "Did the servicemen attend any Fire drills conducted?",
-        "Is the fire evacuation route free from obstruction and evacuation route available and displayed in the office?",
+        "Is there any unauthorised electrical appliance brought into the office with the approval?",
+        "Was there any items display on top of the cupboard which may cause fall hazard",
       ],
     },
   ],
@@ -581,7 +577,7 @@ const questions: Question[] = [
       header: "Gully traps and Drains",
       data: [
         "Check and ensure that the gully traps, scupper drains along corridors and drains along the sides of building and roads are free from obstruction that may impede the flow of water",
-        "MISSING",
+        "Ensure that the covers (which do not have holes) of the gully traps are oiled if the water flow to the trap is minimal",
         "Ensure that the gully traps are oiled if the water flow to the trap is minimal",
       ],
     },
