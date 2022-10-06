@@ -97,9 +97,9 @@ function invalid() {
         <label class="block text-sm font-medium text-gray-700">Node</label>
         <div class="mt-1">
           <Field as="select" id="node" name="node">
-            <option value="STC">STC</option>
-            <option value="ATC">ATC</option>
-            <option value="LVC">LVC</option>
+            <option value="TNB">TNB</option>
+            <option value="CNB">CNB</option>
+            <option value="CLN">CLN</option>
           </Field>
 
           <ErrorMessage
