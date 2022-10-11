@@ -123,6 +123,7 @@ function invalid() {
             <option value="CTN">CTN</option>
             <option value="TTN">TTN</option>
             <option value="CLN">CLN</option>
+            <option value="SBC">SBC</option>
           </Field>
 
           <ErrorMessage
